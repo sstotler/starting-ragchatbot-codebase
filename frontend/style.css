@@ -630,6 +630,47 @@ details[open] .suggested-header::before {
     text-transform: none;
 }
 
+/* New Chat Button */
+.new-chat-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.new-chat-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.new-chat-button:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.new-chat-button:active {
+    transform: translateY(0);
+}
+
+.new-chat-button svg {
+    flex-shrink: 0;
+}
+
 /* Suggested Questions in Sidebar */
 .suggested-items {
     display: flex;
@@ -737,6 +778,13 @@ details[open] .suggested-header::before {
     .suggested-item {
         padding: 0.5rem 0.75rem;
         font-size: 0.8rem;
+    }
+
+    .new-chat-button {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+        justify-content: flex-start;
+        text-align: left;
     }
 }
 
