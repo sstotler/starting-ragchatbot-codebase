@@ -52,36 +52,38 @@ class CourseSearchTool(Tool):
     def execute(self, query: str, course_name: Optional[str] = None, lesson_number: Optional[int] = None) -> str:
         """
         Execute the search tool with given parameters.
-        
+
         Args:
             query: What to search for
             course_name: Optional course filter
             lesson_number: Optional lesson filter
-            
+
         Returns:
             Formatted search results or error message
         """
-        
+
         # Use the vector store's unified search interface
         results = self.store.search(
             query=query,
             course_name=course_name,
             lesson_number=lesson_number
         )
-        
+
         # Handle errors
         if results.error:
+            self.last_sources = []  # Clear sources on error
             return results.error
-        
+
         # Handle empty results
         if results.is_empty():
+            self.last_sources = []  # Clear sources on empty results
             filter_info = ""
             if course_name:
                 filter_info += f" in course '{course_name}'"
             if lesson_number:
                 filter_info += f" in lesson {lesson_number}"
             return f"No relevant content found{filter_info}."
-        
+
         # Format and return results
         return self._format_results(results)
     

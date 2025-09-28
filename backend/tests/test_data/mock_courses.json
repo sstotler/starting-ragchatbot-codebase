@@ -1,0 +1,33 @@
+{
+  "courses": [
+    {
+      "title": "RAG Fundamentals",
+      "course_link": "https://example.com/rag-course",
+      "instructor": "Dr. AI",
+      "lessons": [
+        {
+          "lesson_number": 1,
+          "title": "Introduction to RAG",
+          "lesson_link": "https://example.com/rag-course/lesson1"
+        },
+        {
+          "lesson_number": 2,
+          "title": "Advanced RAG Techniques",
+          "lesson_link": "https://example.com/rag-course/lesson2"
+        }
+      ]
+    },
+    {
+      "title": "Prompt Compression and Query Optimization",
+      "course_link": "https://example.com/prompt-course",
+      "instructor": "Prof. Efficiency",
+      "lessons": [
+        {
+          "lesson_number": 1,
+          "title": "Token Reduction Strategies",
+          "lesson_link": "https://example.com/prompt-course/lesson1"
+        }
+      ]
+    }
+  ]
+}
