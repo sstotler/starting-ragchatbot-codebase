@@ -199,7 +199,7 @@ class CourseOutlineTool(Tool):
         # Course header with title and link
         if course_link:
             outline_parts.append(f"**{course_title}**")
-            outline_parts.append(f"Course Link: {course_link}")
+            outline_parts.append(f"[Course Link]({course_link})")
         else:
             outline_parts.append(f"**{course_title}**")
 

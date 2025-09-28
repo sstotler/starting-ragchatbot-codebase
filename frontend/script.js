@@ -16,7 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
     totalCourses = document.getElementById('totalCourses');
     courseTitles = document.getElementById('courseTitles');
     newChatButton = document.getElementById('newChatButton');
-    
+
+    // Configure marked.js to open links in new tabs
+    if (typeof marked !== 'undefined') {
+        marked.use({
+            renderer: {
+                link(token) {
+                    const href = token.href || '';
+                    const title = token.title || '';
+                    const text = token.text || '';
+                    const titleAttr = title ? ` title="${title}"` : '';
+                    return `<a href="${href}" target="_blank"${titleAttr}>${text}</a>`;
+                }
+            }
+        });
+    }
+
     setupEventListeners();
     createNewSession();
     loadCourseStats();
